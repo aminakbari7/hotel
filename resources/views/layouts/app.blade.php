@@ -33,7 +33,7 @@
         <link href="{{ asset('assets/css/style.css')}}" rel="stylesheet">
     
         <!-- Template Stylesheet -->
-        <link href="{{ asset('assets/css/style.css" rel="stylesheet')}}">
+        <link href="{{ asset('assets/css/style.css')}}" rel="stylesheet">
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
