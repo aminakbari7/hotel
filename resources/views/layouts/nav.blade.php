@@ -49,6 +49,7 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                             <a href="index.html" class="nav-item nav-link active">Home</a>
+                            <a href="contact.html" class="nav-item nav-link">Contact</a>
                             <a href="about.html" class="nav-item nav-link">About</a>
                             <a href="service.html" class="nav-item nav-link">Services</a>
                             <a href="room.html" class="nav-item nav-link">Rooms</a>
@@ -60,30 +61,19 @@
                                     <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
-                        </div>
-                    </div>
+
+                        
                     @auth
+
                     @if(Auth::user()->role!='admin')
-                    <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    
                    @endif
                    @if(Auth::user()->role=='admin')
-                   <li class="nav-item"><a href="{{route('adminpanel')}}" class="nav-link">Admin panel</a></li>
-                   <li class="nav-item"><a href="{{route('createproducts')}}" class="nav-link">create-product</a></li>
-                   <li class="nav-item"><a href="{{route('listadmin')}}" class="nav-link">admins</a></li>
-                   <li class="nav-item"><a href="{{route('showusers')}}" class="nav-link">users</a></li>
+                   
          
                    @endif
                    @endauth
                    @if (Route::has('login'))
-                   @auth
-                   <li class="nav-item cart"><a href="{{route('cart')}}" class="nav-link"><span class="icon icon-shopping_cart"><span class="badge" style="background-color: brown">
-                    <livewire:notif/>
-                 </span></span></a>
-                 @endauth
                  @endif
                    @if (Route::has('login'))
                          @auth  
@@ -93,8 +83,24 @@
                          <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">register</a></li>                        @endif
                          @endauth
                  @endif
-
-
+                            @auth
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ auth()->user()->name }}</a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    <a href="{{route('profile.edit')}}" class="dropdown-item">profile</a>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                            <a class="dropdown-item" href="{{route('logout')}}"
+                                                onclick="event.preventDefault();
+                                                            this.closest('form').submit();">
+                                            {{ __('Log Out') }}
+                                    </a>
+                                    </form>
+                                </div>
+                            </div>
+                            @endauth
+                </div>
+            </div>
                 </nav>
             </div>
         </div>
