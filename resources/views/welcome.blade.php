@@ -98,7 +98,6 @@
                                         </div>
                                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                                     </div>
-                                    <a href="https://htmlcodex.com/hotel-html-template-pro" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Premium Version<i class="fa fa-arrow-right ms-3"></i></a>
                                 </div>
                             </nav>
                         </div>
@@ -111,7 +110,7 @@
                     <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="w-100" src="img/carousel-1.jpg" alt="Image">
+                                <img class="w-100" src="{{ asset('assets/img/carousel-1.jpg')}}" alt="Image">
                                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                     <div class="p-3" style="max-width: 700px;">
                                         <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Luxury Living</h6>
@@ -122,7 +121,7 @@
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="w-100" src="img/carousel-2.jpg" alt="Image">
+                                <img class="w-100" src="{{ asset('assets/img/carousel-2.jpg')}}" alt="Image">
                                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                     <div class="p-3" style="max-width: 700px;">
                                         <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Luxury Living</h6>
