@@ -47,11 +47,11 @@
 
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
+                            <a href="{{ route('welcome') }}" class="nav-item nav-link active">Home</a>
                             <a href="contact.html" class="nav-item nav-link">Contact</a>
                             <a href="about.html" class="nav-item nav-link">About</a>
                             <a href="service.html" class="nav-item nav-link">Services</a>
-                            <a href="room.html" class="nav-item nav-link">Rooms</a>
+                            <a href="{{ route('showrooms') }}" class="nav-item nav-link">Rooms</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                                 <div class="dropdown-menu rounded-0 m-0">
