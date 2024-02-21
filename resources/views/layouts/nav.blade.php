@@ -69,7 +69,7 @@
                    <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">admin panel</a>
                     <div class="dropdown-menu rounded-0 m-0">
-                        <a href="{{ route('showrooms') }}" class="dropdown-item">rooms</a>
+                        <a href="{{ route('showroomsadmin') }}" class="dropdown-item">rooms</a>
                         <a href="{{ route('createroom') }}" class="dropdown-item">add room</a>
                         <a href="testimonial.html" class="dropdown-item">banner</a>
                     </div>
