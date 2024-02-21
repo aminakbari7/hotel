@@ -68,7 +68,14 @@
                     
                    @endif
                    @if(Auth::user()->role=='admin')
-                   
+                   <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">admin panel</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="booking.html" class="dropdown-item">rooms</a>
+                        <a href="team.html" class="dropdown-item">add room</a>
+                        <a href="testimonial.html" class="dropdown-item">banner</a>
+                    </div>
+                </div>
          
                    @endif
                    @endauth
