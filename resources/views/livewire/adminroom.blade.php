@@ -24,7 +24,7 @@
               <td><input wire:model="newchild" type="text" placeholder="{{$room->child }}"value="{{$room->child }}" ></td>
               <td><input wire:model="newprice" type="text" placeholder="{{$room->price }}" value="{{$room->price }}"></td>
               <td><input wire:model="newimage" type="file" placeholder="{{$room->image }}" value="{{$room->image }}"></td>
-              <td><input wire:model="newdescription" type="text" placeholder=" {{$room->description}}"value=" {{$room->description}}"></td>
+              <td><textarea wire:model="newdescription" type="text" placeholder=" {{$room->description}}"value=" {{$room->description}}"></textarea></td>
               <td><a wire:click="editroom({{ $room->id }})" class="btn btn-success  text-center ">save</a> </td>
               </td>
           </tr>
