@@ -18,6 +18,21 @@
             </thead>
             <tbody>
             @foreach ($rooms as $room )
+            @if($keyroom==1 && $uroom==$room->id)
+            <tr>
+              <th scope="row">{{ $room->id }}</th>
+              <td><input wire:model="newsize" type="text" placeholder=" {{$room->size }}"></td>
+              <td><input wire:model="newchild" type="text" placeholder=" {{$room->child }}"></td>
+              <td><input wire:model="newprice" type="text" placeholder=" {{$room->price }}"></td>
+              <td><input wire:model="newimage" type="text" placeholder=" {{$room->image }}"></td>
+              <td><input wire:model="newdescription" type="text" placeholder=" {{$room->description}}"></td>
+              <td>
+                  <button wire:click="editroom({{ $room->id }})" class="btn btn-success  text-center ">save</button>
+                  <button wire:click="cancelroom" class="btn btn-gray  text-center ">cancel</button>
+              </td>
+          </tr>
+            @endif
+            @if($keyroom==-1 || $uroom!=$room->id)
             <tr>
                 <th scope="row">{{ $room->id }}</th>
                 <td>{{ $room->size }}</td>
@@ -27,9 +42,10 @@
                 <td>{{ $room->description }}</td>
                 <td>
                     <a href="delete-products.html" class="btn btn-danger  text-center ">delete</a>
-                    <a href="delete-products.html" class="btn btn-warning  text-center ">update</a>
+                    <button wire:click="updateroom({{ $room->id }})" class="btn btn-warning  text-center ">update</button>
                 </td>
             </tr>
+            @endif
             @endforeach
         </tbody>
     </table> 
