@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Livewire\Admin\Createroomlivevwire;
 use App\Livewire\Admin\Createtroomlivevwire;
+use App\Livewire\Createroomadmin;
+use App\Livewire\Createroomlivevwire as LivewireCreateroomlivevwire;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,9 +31,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth','isadmin'])->group(function () {
 Route::get('/admin/createroom', function () {return view('admin/createroom');})->name('createroom');
-Route::get('/admin/createroomlivewire',Createtroomlivevwire::class );
-
-
+Route::get('createroomadmin',Createroomadmin::class );
 });
 
 
