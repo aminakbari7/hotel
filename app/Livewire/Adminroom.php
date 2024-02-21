@@ -40,6 +40,8 @@ class Adminroom extends Component
        $temp->price=$this->newprice;
        if($this->newchild!=null)
        $temp->child=$this->newchild;
+       if($this->newdescription!=null)
+       $temp->description=$this->newdescription;
        $temp->save();
        $this->uroom=-1;
         $this->keyroom=-1;
