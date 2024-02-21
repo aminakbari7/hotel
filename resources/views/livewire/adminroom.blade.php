@@ -5,7 +5,6 @@
       <div class="card-body">
         <table class="table">
           <thead>
-              
               <tr>
                   <th scope="col">#</th>
                   <th scope="col">size</th>
@@ -21,18 +20,18 @@
             @if($keyroom==1 && $uroom==$room->id)
             <tr>
               <th scope="row">{{ $room->id }}</th>
-              <td><input wire:model="newsize" type="text" placeholder=" {{$room->size }}"></td>
-              <td><input wire:model="newchild" type="text" placeholder=" {{$room->child }}"></td>
-              <td><input wire:model="newprice" type="text" placeholder=" {{$room->price }}"></td>
-              <td><input wire:model="newimage" type="text" placeholder=" {{$room->image }}"></td>
-              <td><input wire:model="newdescription" type="text" placeholder=" {{$room->description}}"></td>
+              <td><input wire:model="newsize" type="text" placeholder="{{$room->size }}" value="{{$room->size }}"></td>
+              <td><input wire:model="newchild" type="text" placeholder="{{$room->child }}"value="{{$room->child }}" ></td>
+              <td><input wire:model="newprice" type="text" placeholder="{{$room->price }}" value="{{$room->price }}"></td>
+              <td><input wire:model="newimage" type="text" placeholder="{{$room->image }}" value="{{$room->image }}"></td>
+              <td><input wire:model="newdescription" type="text" placeholder=" {{$room->description}}"value=" {{$room->description}}"></td>
               <td>
-                  <button wire:click="editroom({{ $room->id }})" class="btn btn-success  text-center ">save</button>
-                  <button wire:click="cancelroom" class="btn btn-gray  text-center ">cancel</button>
+                  <a wire:click="editroom({{ $room->id }})" class="btn btn-success  text-center ">save</a> </td>
+                  <td><a wire:click="cancelroom" class="btn btn-warning  text-center ">cancel</a>
               </td>
           </tr>
             @endif
-            @if($keyroom==-1 || $uroom!=$room->id)
+            @if($keyroom==-1 && $uroom!=$room->id)
             <tr>
                 <th scope="row">{{ $room->id }}</th>
                 <td>{{ $room->size }}</td>
