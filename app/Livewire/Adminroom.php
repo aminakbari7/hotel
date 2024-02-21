@@ -28,7 +28,9 @@ class Adminroom extends Component
     public function editroom($id)
     {
        $temp=room::find($id);
+       if($this->newsize!=null)
        $temp->size=$this->newsize;
+       if($this->newprice!=null)
        $temp->price=$this->newprice;
        $temp->save();
        $this->uroom=-1;
