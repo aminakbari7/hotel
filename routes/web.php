@@ -15,17 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {return view('welcome');});
-Route::get('/room/showrooms', function () {return view('room/showrooms');})->name('showrooms');
-
-
-
-
-
-
 Route::get('/', function () {return view('welcome');})->name('welcome');
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/room/showrooms', function () {return view('room/showrooms');})->name('showrooms');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -35,7 +26,9 @@ Route::middleware('auth')->group(function () {
 
 
 Route::middleware(['auth','isadmin'])->group(function () {
-   
+Route::get('/admin/createroom', function () {return view('admin/createroom');})->name('createroom');
+
+
 });
 
 
