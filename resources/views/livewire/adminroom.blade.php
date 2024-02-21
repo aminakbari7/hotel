@@ -40,8 +40,8 @@
                 <td>{{ $room->image }}</td>
                 <td>{{ $room->description }}</td>
                 <td>
-                    <a href="delete-products.html" class="btn btn-danger  text-center ">delete</a>
-                    <button wire:click="updateroom({{ $room->id }})" class="btn btn-warning  text-center ">update</button>
+                    <a wire:click="destroyroom({{ $room->id }})" class="btn btn-danger  text-center ">delete</a>
+                    <a wire:click="updateroom({{ $room->id }})" class="btn btn-warning  text-center ">update</a>
                 </td>
             </tr>
             @endif
