@@ -25,6 +25,12 @@ class Adminroom extends Component
         $this->rooms=room::all();
         return view('livewire.adminroom');
     }
+    public function destroyroom($id)
+    {
+       room::destroy($id);
+      $this->rooms=room::all();
+      return view('livewire.adminroom');
+    }
     public function editroom($id)
     {
        $temp=room::find($id);
