@@ -36,6 +36,7 @@
         <link href="{{ asset('assets/css/style.css')}}" rel="stylesheet">
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @livewireStyles
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -69,6 +70,6 @@
   
       <!-- Template Javascript -->
       <script src="{{ asset('assets/js/main.js')}}"></script>
-  
+      @livewireScripts
     </body>
 </html>
