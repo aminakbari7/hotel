@@ -1,12 +1,15 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\roomController;
+
 use App\Livewire\Admin\Createroomlivevwire;
 use App\Livewire\Admin\Createtroomlivevwire;
 use App\Livewire\Adminroom;
 use App\Livewire\Createroomadmin;
 use App\Livewire\Createroomlivevwire as LivewireCreateroomlivevwire;
 use App\Livewire\Roomlivewire;
+use App\Livewire\Roomsingleshow;
 use App\Models\room;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +26,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {return view('welcome');});
 Route::get('roomlivewire',Roomlivewire::class);
+
+Route::get('/room/showsingle/{id}', [roomController::class, 'index'])->name('room.showsingle');
+
+
+Route::get('roomsingleshow',Roomsingleshow::class);
+
+
+
+
+
 
 Route::get('/', function () {return view('welcome');})->name('welcome');
 Route::get('/room/showrooms', function () {return view('room/showrooms');})->name('showrooms');
