@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="d-flex mb-3">
-                    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>{{ $room->size }}</small>
+                    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2">{{ $room->size }}</i></small>
                     <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
                     <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
                 </div>
