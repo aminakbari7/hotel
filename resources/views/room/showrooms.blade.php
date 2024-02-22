@@ -57,7 +57,7 @@
         <br>
         <br>
         <br>
-        br
+        
         @include('layouts.footer')
 
         <!-- Back to Top -->
