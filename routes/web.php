@@ -6,6 +6,8 @@ use App\Livewire\Admin\Createtroomlivevwire;
 use App\Livewire\Adminroom;
 use App\Livewire\Createroomadmin;
 use App\Livewire\Createroomlivevwire as LivewireCreateroomlivevwire;
+use App\Livewire\Roomlivewire;
+use App\Models\room;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {return view('welcome');});
+Route::get('roomlivewire',Roomlivewire::class);
+
 Route::get('/', function () {return view('welcome');})->name('welcome');
 Route::get('/room/showrooms', function () {return view('room/showrooms');})->name('showrooms');
 
@@ -27,6 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
 });
 
 
