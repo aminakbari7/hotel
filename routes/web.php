@@ -33,6 +33,7 @@ Route::get('homelivewire',Homelivewire::class);
 
 
 
+
 Route::get('/room/showsingle/{id}', [roomController::class, 'index'])->name('room.showsingle');
 
 
