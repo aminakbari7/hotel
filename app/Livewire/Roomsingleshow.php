@@ -3,7 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-
+use DateTime;
 class Roomsingleshow extends Component
 {
 
@@ -12,20 +12,22 @@ class Roomsingleshow extends Component
     public $start;
     public $end;
     public $room;
-    public function order()
+    public function save()
     {
-
+        $datetime1 = new DateTime($this->start);
+        $datetime2 = new DateTime($this->end);
+        $interval = $datetime1->diff($datetime2);
+        $this->day = $interval->format('%a');
     }
+
 
     public function mount($room)
     {
         $this->room=$room;
-       
     }
     
     public function render()
     {
-
         return view('livewire.roomsingleshow');
     }
 }
