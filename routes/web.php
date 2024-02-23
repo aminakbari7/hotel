@@ -8,6 +8,7 @@ use App\Livewire\Admin\Createtroomlivevwire;
 use App\Livewire\Adminroom;
 use App\Livewire\Createroomadmin;
 use App\Livewire\Createroomlivevwire as LivewireCreateroomlivevwire;
+use App\Livewire\Homelivewire;
 use App\Livewire\Roomlivewire;
 use App\Livewire\Roomsingleshow;
 use App\Models\room;
@@ -26,6 +27,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {return view('welcome');});
 Route::get('roomlivewire',Roomlivewire::class);
+Route::get('homelivewire',Homelivewire::class);
+
+
+
+
 
 Route::get('/room/showsingle/{id}', [roomController::class, 'index'])->name('room.showsingle');
 
