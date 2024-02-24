@@ -13,13 +13,13 @@
                 <div class="col-md-6">
                     <div class="form-floating date" id="date3" data-target-input="nearest">
                         <input wire:model="start" type="date" class="form-control datetimepicker-input" placeholder="Check In"/>
-                        <label for="checkin">Check In</label>
+                        <label for="checkin">start</label>
                 </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating date" id="date4" data-target-input="nearest">
                         <input wire:model="end" type="date" class="form-control datetimepicker-input"  placeholder="Check Out"  />
-                        <label for="checkout">Check Out</label>
+                        <label for="checkout">end</label>
                     </div>
                 </div>
                 <div class="col-12">
