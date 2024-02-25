@@ -27,6 +27,10 @@ class Roomsingleshow extends Component
     {
         $this->key=-1;
     }
+    public function back()
+    {
+        $this->key=-1;
+    }
 
     public function mount($room)
     {
