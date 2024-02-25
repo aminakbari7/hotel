@@ -12,14 +12,20 @@ class Roomsingleshow extends Component
     public $start;
     public $end;
     public $room;
+    public $key=-1;
     public function save()
     {
         $datetime1 = new DateTime($this->start);
         $datetime2 = new DateTime($this->end);
         $interval = $datetime1->diff($datetime2);
         $this->day = $interval->format('%a');
+        $this->key=1;
     }
 
+    public function pay()
+    {
+
+    }
 
     public function mount($room)
     {
