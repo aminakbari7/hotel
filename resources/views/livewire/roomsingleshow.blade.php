@@ -47,6 +47,9 @@
                 <div class="col-12">
                     <button class="btn btn-success w-100 py-3" type="submit"><strong style="color: black">pay</strong></button>
                 </div>
+                <div class="col-12">
+                    <button  wire:click="back"class="btn btn-success w-100 py-3" type="submit"><strong style="color: black">back</strong></button>
+                </div>
             </div>
         </form>
         @endif
