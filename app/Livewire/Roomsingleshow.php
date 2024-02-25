@@ -19,6 +19,7 @@ class Roomsingleshow extends Component
         $datetime2 = new DateTime($this->end);
         $interval = $datetime1->diff($datetime2);
         $this->day = $interval->format('%a');
+        $this->totalprice=$this->room->price*$this->day;
         $this->key=1;
     }
 
