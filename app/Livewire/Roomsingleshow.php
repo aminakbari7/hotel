@@ -24,7 +24,7 @@ class Roomsingleshow extends Component
 
     public function pay()
     {
-
+        $this->key=-1;
     }
 
     public function mount($room)
