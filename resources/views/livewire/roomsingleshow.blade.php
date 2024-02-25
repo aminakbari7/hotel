@@ -41,6 +41,7 @@
                         <h1>start={{ $start }}</h1>
                         <h1>end={{ $end }}</h1>
                         <h1>day={{ $day }}</h1>
+                        <h1>price={{ $totalprice }}</h1>
                     </div>
                 </div>
                 <div class="col-12">
