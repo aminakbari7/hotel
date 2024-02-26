@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\booking;
 use DateTime;
 use Illuminate\Support\Facades\Session;
 class Roomsingleshow extends Component
@@ -22,13 +23,25 @@ class Roomsingleshow extends Component
         $this->day = $interval->format('%a');
         $this->totalprice=$this->room->price*$this->day;
         $this->key=1;
-        Session()->flash('msg', 'اضافه شد!'); 
+        Session()->flash('msg', 'فلکتور ساخته شد'); 
 
     }
 
     public function pay()
     {
+        booking::Create([
+            'user_id'=>auth()->user()->id,
+            'room_id'=>$this->room->id,
+           'start'=>$this->start,
+           'end'=>$this->end,
+            'totalprice'=>$this->totalprice,
+            'day'=>$this->day]);
+            $this->totalprice="";
+            $this->day="";
+            $this->end="";
+            $this->start="";
         $this->key=-1;
+        Session()->flash('msg', 'پرداخت  شد!');
     }
     public function back()
     {
