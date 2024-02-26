@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use DateTime;
+use Illuminate\Support\Facades\Session;
 class Roomsingleshow extends Component
 {
 
@@ -21,6 +22,8 @@ class Roomsingleshow extends Component
         $this->day = $interval->format('%a');
         $this->totalprice=$this->room->price*$this->day;
         $this->key=1;
+        Session()->flash('msg', 'اضافه شد!'); 
+
     }
 
     public function pay()
