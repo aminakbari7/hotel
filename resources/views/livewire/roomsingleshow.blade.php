@@ -1,4 +1,11 @@
 <div class="col-lg-6">
+    @if (session()->exists('msg'))
+    <div x-data="{show: true}" x-init="setTimeout(() => show = false, 1000)" x-show="show">
+        <div class="alert alert-success">
+            {{ session('msg') }}
+        </div>
+    </div>
+  @endif
     <div class="wow fadeInUp" data-wow-delay="0.2s">
         @if($key==-1)
         <form wire:submit="save">  
