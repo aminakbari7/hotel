@@ -48,7 +48,7 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                             <a href="{{ route('welcome') }}" class="nav-item nav-link">Home</a>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="{{ route('contact')}}" class="nav-item nav-link">Contact</a>
                             <a href="about.html" class="nav-item nav-link">About</a>
                             <a href="service.html" class="nav-item nav-link">Services</a>
                             <a href="{{ route('showrooms') }}" class="nav-item nav-link">Rooms</a>
