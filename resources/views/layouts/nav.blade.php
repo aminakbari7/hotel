@@ -71,6 +71,7 @@
                     <div class="dropdown-menu rounded-0 m-0">
                         <a href="{{ route('showroomsadmin') }}" class="dropdown-item">rooms</a>
                         <a href="{{ route('createroom') }}" class="dropdown-item">add room</a>
+                        <a href="{{ route('adminshowbooking') }}" class="dropdown-item">list booking</a>
                         <a href="testimonial.html" class="dropdown-item">banner</a>
                     </div>
                 </div>
