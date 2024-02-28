@@ -10,6 +10,7 @@ use Livewire\Component;
 class Adminbookingshow extends Component
 {
     public $bookings;
+    public $keybooking=-1,$ubooking=-1;
     public function mount()
     {
         $this->bookings=booking::all();
