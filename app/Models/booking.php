@@ -14,7 +14,8 @@ class booking extends Model
         'start',
         'end',
         'totalprice',
-        'day'
+        'day',
+        'status',
     ];   
     
 
