@@ -5,6 +5,7 @@ use App\Http\Controllers\roomController;
 
 use App\Livewire\Admin\Createroomlivevwire;
 use App\Livewire\Admin\Createtroomlivevwire;
+use App\Livewire\Adminbookingshow;
 use App\Livewire\Adminroom;
 use App\Livewire\Createroomadmin;
 use App\Livewire\Createroomlivevwire as LivewireCreateroomlivevwire;
@@ -37,11 +38,7 @@ Route::get('homelivewire',Homelivewire::class);
 
 
 Route::get('/room/showsingle/{id}', [roomController::class, 'index'])->name('room.showsingle');
-
-
 Route::get('roomsingleshow',Roomsingleshow::class);
-
-
 
 
 
@@ -60,9 +57,11 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth','isadmin'])->group(function () {
 Route::get('/admin/createroom', function () {return view('admin/createroom');})->name('createroom');
 Route::get('/admin/showroomsadmin', function () {return view('admin/showroomsadmin');})->name('showroomsadmin');
+Route::get('/admin/showbooking', function () {return view('admin/showbooking');})->name('adminshowbooking');
 
 Route::get('createroomadmin',Createroomadmin::class );
 Route::get('adminroom',Adminroom::class );
+Route::get('adminbookingshow',Adminbookingshow::class );
 });
 
 
