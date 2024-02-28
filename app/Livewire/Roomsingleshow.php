@@ -35,6 +35,7 @@ class Roomsingleshow extends Component
            'start'=>$this->start,
            'end'=>$this->end,
             'totalprice'=>$this->totalprice,
+            'status'=>'waitting',
             'day'=>$this->day]);
             $this->totalprice="";
             $this->day="";
