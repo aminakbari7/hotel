@@ -19,13 +19,13 @@
                 <tbody>
                 @foreach ($bookings as $booking )
                 @if($keybooking==1 && $ubooking==$booking->id)
-                <tr style="background-color: rgb(159, 191, 180)">
+                <tr style="background-color: rgb(184, 194, 190)">
                   <th scope="row" style="background-color: rgb(219, 183, 183)">{{ $booking->user_id }}</th>
                   <td>{{ $booking->room_id }}</td>
-                  <td><input wire:model="newchild" type="text" placeholder="{{$booking->start }}"value="{{$booking->start }}" ></td>
-                  <td><input wire:model="newprice" type="text" placeholder="{{$booking->end }}" value="{{$booking->end }}"></td>
-                  <td><input wire:model="newimage" type="text" placeholder="{{$booking->day }}" value="{{$booking->day }}"></td>
-                  <td><input wire:model="newimage" type="text" placeholder="{{$booking->totalprice }}" value="{{$booking->totalprice }}"></td>
+                    <td>{{ $booking->start }}</td>
+                    <td>{{ $booking->end }}</td>
+                    <td>{{ $booking->day }}</td>
+                    <td>{{ $booking->totalprice }}</td>
                   <td>
                     <select wire:model="newstatus" class="form-control" id="exampleSelectGender">
                       <option>select status</option>
@@ -52,7 +52,24 @@
                     <td>{{ $booking->end }}</td>
                     <td>{{ $booking->day }}</td>
                     <td>{{ $booking->totalprice }}</td>
-                    <td>{{ $booking->status }}</td>
+
+                    @if($booking->status=='waitting')
+                    <td class="text-warning">
+                     <strong> {{ $booking->status }}</strong>
+                    </td>
+                    @endif
+                    @if($booking->status=='deny')
+                    <td class="text-danger">
+                     <strong> {{ $booking->status }}</strong>
+                    </td>
+                    @endif
+                    @if($booking->status=='accept')
+                    <td class="text-success">
+                      <strong>{{ $booking->status }}</strong>
+                    </td>
+                    @endif
+
+
                     <td>
                         <a  class="btn btn-danger  text-center "><svg width="25" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
