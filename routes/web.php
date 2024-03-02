@@ -10,6 +10,7 @@ use App\Livewire\Adminroom;
 use App\Livewire\Createroomadmin;
 use App\Livewire\Createroomlivevwire as LivewireCreateroomlivevwire;
 use App\Livewire\Homelivewire;
+use App\Livewire\Mybookinglivewire;
 use App\Livewire\Roomlivewire;
 use App\Livewire\Roomsingleshow;
 use App\Models\room;
@@ -50,6 +51,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/mybooking', function () {return view('mybooking');})->name('mybooking');
+    Route::get('mybookinglivewire',Mybookinglivewire::class );
+
 
 });
 
