@@ -13,25 +13,23 @@ class Mybookinglivewire extends Component
 {
     public $size=0;
     public $booking;
-   
-    #[On('listcheck')]
-    public function updatelist()
-    {
-        $this->booking=booking::select()->where('user_id', auth()->user()->id)->get();
-        $this->size=$this->booking->count();
-        return view('livewire.mybookinglivewire');
-    }
-   
     public function deletebooking($id)
     {
         $temp=booking::find($id);
         $temp->isactive=0;
         $temp->save();
+        $this->mount();
+        $this->render();
     }
-    public function render()
+
+    #[On('bookingchange')]
+    public function mount()
     {
         $this->booking=booking::select()->where('user_id', auth()->user()->id)->where('isactive','1')->get();
         $this->size=$this->booking->count();
+    }
+    public function render()
+    {
         return view('livewire.mybookinglivewire');
     }
 }
