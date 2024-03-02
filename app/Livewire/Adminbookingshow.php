@@ -33,7 +33,7 @@ class Adminbookingshow extends Component
             $this->newstatus="";
         }
         $this->mount();
-
+        $this->dispatch('listcheck');
     }
     public function mount()
     {
