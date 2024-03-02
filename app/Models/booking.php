@@ -16,6 +16,7 @@ class booking extends Model
         'totalprice',
         'day',
         'status',
+        'isactive',
     ];   
     
 
