@@ -52,15 +52,13 @@
                             <a href="about.html" class="nav-item nav-link">About</a>
                             <a href="service.html" class="nav-item nav-link">Services</a>
                             <a href="{{ route('showrooms') }}" class="nav-item nav-link">Rooms</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                                <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="booking.html" class="dropdown-item">Booking</a>
-                                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                </div>
-                            </div>
-
-                        
+                            @auth
+                            @if(Auth::user()->role!='admin')
+                            <a href="{{ route('mybooking') }}" class="nav-item nav-link">My Booking</a>
+                            @endif
+                            @endauth
+                            
+                       
                     @auth
                     @if(Auth::user()->role!='admin')
                     
