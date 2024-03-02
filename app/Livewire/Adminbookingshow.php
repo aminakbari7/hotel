@@ -32,12 +32,21 @@ class Adminbookingshow extends Component
             $this->keybooking=-1;
             $this->newstatus="";
         }
+        $this->dispatch('bookingchange'); 
         $this->mount();
-        $this->dispatch('listcheck');
+    }
+    public function deletebooking($id)
+    {
+        $temp=booking::find($id);
+        $temp->isactive=0;
+        $temp->save();
+        $this->dispatch('bookingchange'); 
+        $this->mount();
+        $this->render();
     }
     public function mount()
     {
-        $this->bookings=booking::all();
+        $this->bookings=booking::select()->where('isactive','1')->get();
     }
     public function render()
     {
