@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" wire:poll>
     <div class="row">
       <div class="col">
         <div class="card">
