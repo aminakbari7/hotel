@@ -1,6 +1,6 @@
-<div class="col-lg-6">
+<div class="col-lg-6" wire:poll>
     @if (session()->exists('msg'))
-    <div x-data="{show: true}" x-init="setTimeout(() => show = false, 1000)" x-show="show">
+    <div x-data="{show: true}" x-init="setTimeout(() => show = false, 2000)" x-show="show">
         <div class="alert alert-success">
             {{ session('msg') }}
         </div>
