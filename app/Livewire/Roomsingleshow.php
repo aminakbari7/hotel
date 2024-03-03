@@ -17,18 +17,32 @@ class Roomsingleshow extends Component
     public $key=-1;
     public function save()
     {
+        if($this->start<$this->end )
+        {
         $datetime1 = new DateTime($this->start);
         $datetime2 = new DateTime($this->end);
         $interval = $datetime1->diff($datetime2);
         $this->day = $interval->format('%a');
         $this->totalprice=$this->room->price*$this->day;
         $this->key=1;
-        Session()->flash('msg', 'فلکتور ساخته شد'); 
+        Session()->flash('msg', 'فاکتور ساخته شد'); 
+        }
+        else
+        {
+            $this->totalprice="";
+            $this->day="";
+            $this->end="";
+            $this->start="";
+            Session()->flash('msg', 'تاریخ ورودی صحت ندارند');
 
+        }
+    
     }
 
     public function pay()
     {
+        if($this->start<$this->end && $this->day>0)
+        {
         booking::Create([
             'user_id'=>auth()->user()->id,
             'room_id'=>$this->room->id,
@@ -43,6 +57,11 @@ class Roomsingleshow extends Component
             $this->start="";
         $this->key=-1;
         Session()->flash('msg', 'پرداخت  شد!');
+        }
+        else
+        {
+            Session()->flash('msg', 'تاریخ ورودی صحت ندارند');
+        }
     }
     public function back()
     {
